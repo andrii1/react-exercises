@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+
+class ControlledComponents1Problem extends Component {
+  constructor() {
+    super()
+    this.state={
+    input: 0
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({
+      input: event.target.value
+    });
+    
+  }
+  render() {
+    return (
+      <div className="container">
+        <input type="text" onChange={this.handleChange} placeholder="Say Something" />
+        <p className="echo">Echo:</p>
+        <p>This should mirror the text you typed into the input field.
+        {this.state.input}</p>
+      </div>
+    );
+  }
+}
+
+export default ControlledComponents1Problem;
